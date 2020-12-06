@@ -1,4 +1,4 @@
-FROM circleci/php:7.4-fpm-node-browsers
+FROM circleci/php:8.0-fpm-node-browsers
 
 USER root
 
@@ -12,6 +12,3 @@ RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/i
 RUN docker-php-ext-install zip iconv gd
 
 USER circleci
-
-# install prestissimo
-RUN composer global require hirak/prestissimo
